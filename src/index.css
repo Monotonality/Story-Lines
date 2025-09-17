@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  * {
+    @apply border-obsidian-border;
+  }
+  
+  body {
+    @apply bg-obsidian-bg-primary text-obsidian-text-primary;
+    @apply font-sans antialiased;
+    @apply overflow-hidden;
+  }
+  
+  #root {
+    @apply h-screen;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-obsidian-bg-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-obsidian-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-obsidian-border-light;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn-primary {
+    @apply px-4 py-2 bg-obsidian-purple text-white rounded-md;
+    @apply hover:bg-obsidian-purple-light active:bg-obsidian-purple-dark;
+    @apply transition-colors duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-obsidian-purple focus:ring-opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-obsidian-bg-tertiary text-obsidian-text-primary;
+    @apply border border-obsidian-border rounded-md;
+    @apply hover:bg-obsidian-bg-hover hover:border-obsidian-border-light;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-obsidian-purple focus:ring-opacity-50;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-obsidian-bg-tertiary border border-obsidian-border rounded-lg p-6;
+    @apply shadow-lg;
+  }
+  
+  /* Input styles */
+  .input {
+    @apply w-full px-3 py-2 bg-obsidian-bg-secondary border border-obsidian-border rounded-md;
+    @apply text-obsidian-text-primary placeholder-obsidian-text-muted;
+    @apply focus:outline-none focus:ring-2 focus:ring-obsidian-purple focus:border-obsidian-purple;
+    @apply transition-all duration-200;
+  }
+  
+  /* Panel styles */
+  .sidebar {
+    @apply bg-obsidian-bg-secondary border-r border-obsidian-border;
+  }
+  
+  .sidebar-header {
+    @apply px-4 py-3 border-b border-obsidian-border;
+    @apply bg-obsidian-bg-tertiary;
+  }
+  
+  /* Navigation */
+  .nav-item {
+    @apply px-3 py-2 text-obsidian-text-secondary rounded-md cursor-pointer;
+    @apply hover:bg-obsidian-bg-hover hover:text-obsidian-text-primary;
+    @apply transition-all duration-200;
+  }
+  
+  .nav-item.active {
+    @apply bg-obsidian-purple text-white;
+  }
+  
+  /* Editor container */
+  .editor-container {
+    @apply bg-obsidian-bg-primary border border-obsidian-border rounded-lg overflow-hidden;
+  }
+  
+  /* Search input */
+  .search-input {
+    @apply input pl-10;
+  }
+  
+  /* Graph container */
+  .graph-container {
+    @apply bg-obsidian-bg-secondary border border-obsidian-border rounded-lg overflow-hidden;
+  }
+  
+  /* File tree item */
+  .file-item {
+    @apply px-3 py-2 text-sm text-obsidian-text-secondary rounded-md cursor-pointer;
+    @apply hover:bg-obsidian-bg-hover hover:text-obsidian-text-primary;
+    @apply transition-all duration-200;
+    @apply flex items-center space-x-2;
+  }
+  
+  .file-item.active {
+    @apply bg-obsidian-purple bg-opacity-20 text-obsidian-purple-light;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
